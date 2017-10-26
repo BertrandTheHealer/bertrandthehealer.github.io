@@ -33,7 +33,7 @@
             <i href="https://bertrandthehealer.github.io/" onclick="window.location.href='https://bertrandthehealer.github.io/'" class="material-icons">home</i>
           </button>
           <div class="mdl-tooltip" data-mdl-for="homebutton">
-            Upload <strong>file.zip</strong>
+            Bertrand the Healer homepage
           </div>
         </div>
       </header>
@@ -64,7 +64,7 @@
               <li>Open the developer console (press <code style="background-color:lightgrey">CTRL + SHIFT + J</code> in Chrome)</li>
               <li>Copy and paste the code below into the console</li>
               <pre style="background-color:lightgrey;overflow-x: scroll;">
-                <code>
+                <code id="codesnippet">
 function clickId(id) {
   var element = document.getElementById(id);
     if(element !== undefined) {if(AutoClick){
@@ -179,6 +179,12 @@ for (i = 500; i > -1; i--) {
 }
 </code>
 </pre>
+<button onclick="document.getElementById('codesnippet').select();document.execCommand('copy');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="copybutton">
+  Copy
+</button>
+<div class="mdl-tooltip" data-mdl-for="copybutton">
+Copy code to clipboard
+</div>
               <li>Press enter and AutoCookieClicker will start working</li>
               <li>Use the new buttons in the bottom right corner to control AutoCookieClicker</li>
             </ol>
