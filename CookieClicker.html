@@ -22,6 +22,25 @@
       z-index: 900;
     }
     </style>
+    <script>
+function SelectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;    
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+</script>
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
@@ -179,7 +198,7 @@ for (i = 500; i > -1; i--) {
 }
 </code>
 </pre>
-<button onclick="document.getElementById('codesnippet').select();document.execCommand('copy');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="copybutton">
+<button onclick="SelectText('codesnippet');document.execCommand('copy');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="copybutton">
   Copy
 </button>
 <div class="mdl-tooltip" data-mdl-for="copybutton">
